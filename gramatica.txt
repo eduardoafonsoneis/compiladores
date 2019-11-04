@@ -1,0 +1,16 @@
+START ->  TIPO IDSTREAM;
+
+
+TIPO -> char
+	| int
+	| float
+
+IDSTREAM -> ID, IDSTREAM
+	    | ID
+
+
+ID -> [A-Za-z_]CONT
+
+CONT -> [A-Za-z0-9_]+
+	| &
+ 
