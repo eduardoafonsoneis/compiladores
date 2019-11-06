@@ -11,6 +11,7 @@
 "int"        {printf("integer");}
 "float"      {printf("float number");}
 "char"       {printf("char");}
+"," {printf("virgula");}
 [a-zA-Z_]+[a-zA-Z0-9_]* {printf("ID");}
 . {printf("erro");}
 
