@@ -1,8 +1,29 @@
 %{
 #include <stdio.h>
 int yylex();
-int yyerror(char *s);
+void yyerror(char *s);
 %}
 
-%token INTEGER FLOAT CHAR VIRGULA FIMDECLARACAO ID
+%token INTEGER FLOAT CHAR VIRGULA FIMDECL ID
 
+%start start
+
+%%
+
+start: TIPO idstream FIMDECL {printf("declaracao")}
+;
+idstream: ID, idstream {}
+	| ID {}
+;
+
+%%
+
+int main()
+{
+	return yyparse();
+}
+
+void yyerror(char *msg)
+{
+	fprintf(stderr, "erro: %s\n", msg);
+}

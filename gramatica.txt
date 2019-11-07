@@ -1,4 +1,4 @@
-START ->  TIPO IDSTREAM;
+START ->  TIPO IDSTREAM pontovirgula
 
 
 TIPO -> char
