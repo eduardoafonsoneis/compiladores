@@ -1,8 +1,8 @@
-%option main
+
 
 %{
 #include <stdio.h>
-#include<teste.tab.h>
+#include"teste.tab.h"
 %}
 
 %%
@@ -13,7 +13,7 @@
 "float"      {return FLOAT;}
 "char"       {return CHAR;}
 "," {return VIRGULA;}
-[a-zA-Z_]+[a-zA-Z0-9_]* {return ID;}
-. {return ERRO;}
+[a-zA-Z_]+[a-zA-Z0-9_]* {yylval.strr=strdup(yytext); return ID;}
+. {printf("Charactere invalido");}
 
 %%
