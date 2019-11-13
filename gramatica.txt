@@ -54,6 +54,6 @@ OPLOG -> &&
 
  COMANDOS -> ID OPMATSIM ID
 
-CASES -> 
+CASES -> case id doispontos abrebloq COMANDOS break pontovirgula fechabloq
+| case id doispontos abrebloq COMANDOS break pontovirgula fechabloq default doispontos abrebloq COMANDOS break pontovirgula fechabloq
 
-if(condição){<comandos>} else {<comandos>}
