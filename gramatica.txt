@@ -1,5 +1,7 @@
 START ->  TIPO IDSTREAM pontovirgula
-
+| if abrepar CONDICAO fechapar abrebloq COMANDOS fechabloq
+| if abrepar CONDICAO fechapar abrebloq COMANDOS fechabloq else abrebloq COMANDOS fechabloq
+| switch abrepar ID fechapar abrebloq CASES fechabloq
 
 TIPO -> char
 	| int
@@ -12,5 +14,46 @@ IDSTREAM -> ID, IDSTREAM
 ID -> [A-Za-z_]CONT
 
 CONT -> [A-Za-z0-9_]+
-	| &
- 
+	
+CONDICAO -> ID OPERADOR ID
+
+OPERADOR -> OPMATSIM
+| OPMATESP
+| OPATR
+| OPREL
+| OPLOG
+
+OPMATSIM -> +
+| -
+| *
+| /
+
+
+OPMATESP-> 
+| %
+| ++
+| --
+
+OPATR -> =
+| +=
+| -=
+| *=
+| /=
+| %=
+
+OPREL -> ==
+| !=
+| <=
+| >=
+| <
+| >
+
+OPLOG -> &&
+| ||
+| !
+
+ COMANDOS -> ID OPMATSIM ID
+
+CASES -> 
+
+if(condição){<comandos>} else {<comandos>}
